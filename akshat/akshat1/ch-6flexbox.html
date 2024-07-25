@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: chartreuse;
+        height: 56vh;
+        align-items: center;
+        align-content: center;  /*it does not allow space between them */
+           }
+    .box1 {
+        background-color: red;
+        color: white;
+        height: 233px;
+        /* width: 344px; */
+         border: 2px solid black;
+         order: 3;  /*it say where the box shd be place in the row*/
+         align-self: flex-end; /*the particular item fix it place were every it want*/
+         flex-grow: 3; /*this increases the width of the box*/
+
+    }
+    .box2{
+        background-color: purple;
+        outline-color: skyblue;
+         height: 233px;
+        /* width: 344px; */
+        border: 2px solid black;
+        flex-grow: 1;
+
+        
+    }
+</style>
+<body>
+    <div class="container">
+
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box2">box2b</div>
+    <div class="box2">box2c</div>
+    </div>
+</body>
+</html>
