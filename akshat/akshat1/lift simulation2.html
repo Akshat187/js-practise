@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="lift-simulation.js"></script>
+      
+    
+</head>
+ <style>
+    body{
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    }
+    *{
+        background-color: cyan;
+        box-sizing: border-box;
+
+    }
+  
+    
+</style> 
+<body>
+    <header>
+    <h1>welocome to lift simulation</h1>
+    <section id="input count">
+        <h2 id="floors-count"></h2>
+        <h2 id="lift count"></h2>
+    </section>
+    </header>
+    <main>
+        <section id="input-box">
+            <div id="input-inner-box">
+                <h2> enter your input to start:- </h2>
+                <form id="user-input">
+                    <div class ="flex-center">
+        <div>
+            <input name="floors-input" id="floors-input" min="1" max="100" required type="number" placeholder="floors:">
+            <input name="lift-input" id="lifts-input" min="1" max="10" requried type type="number" placeholder="lifts:">
+        </div>    
+        <button id="submit" type="submit">present simulation</button>
+        </div>
+        </form>
+        <h3>
+            <span class="note">NOTE:</span>
+            <span>Floors can be from 1-100</span>
+        </h3>           
+        <h3><span class="note">NOTE:</span>
+        <span>Lifts can be from 1-100</span>
+    </h3>     
+    </div>
+    </section>
+    <section id="floors-container"></section>
+<section id="lifts-container"></section>
+
+    </main>
+        </section>
+    </main>
+</body>
+</html>

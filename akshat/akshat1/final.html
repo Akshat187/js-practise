@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      * {
+        background-color: cyan;
+        box-sizing: border-box;
+      }
+    </style>
+    <script src="lift-simulation.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Lift Simulation</h1>
+      <section id="input-count">
+        <h2 id="floors-count"></h2>
+        <h2 id="lift-count"></h2>
+      </section>
+    </header>
+    <main>
+      <section id="input-box">
+        <div id="input-inner-box">
+          <h2>Enter your input to start:</h2>
+          <form id="user-input">
+            <div class="flex-center">
+              <div>
+                <input
+                  name="floors-input"
+                  id="floors-input"
+                  min="1"
+                  max="100"
+                  required
+                  type="number"
+                  placeholder="Floors:"
+                />
+                <input
+                  name="lifts-input"
+                  id="lifts-input"
+                  min="1"
+                  max="10"
+                  required
+                  type="number"
+                  placeholder="Lifts:"
+                />
+              </div>
+              <button id="submit" type="submit">Present Simulation</button>
+            </div>
+          </form>
+          <h3><span class="note">NOTE:</span> Floors can be from 1-100</h3>
+          <h3><span class="note">NOTE:</span> Lifts can be from 1-10</h3>
+        </div>
+      </section>
+      <section id="floors-container"></section>
+      <section id="lifts-container"></section>
+    </main>
+  </body>
+</html>
+
+<script>
+  var numOfFloors = document.getElementByIdww("floors-input");
+  var numOfLifts = document.getElementById("lifts-input");
+  var buildButton = document.getElementById("submit");
+
+  buildButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    buildFloors();
+    buildLifts();
+  });
+
+  function buildFloors() {
+    var numberOfFloors = numOfFloors.value;
+    var floorsContainer = document.getElementById("floors-container");
+
+    for (var i = 0; i < numberOfFloors; i++) {
+      var floorButton = document.createElement("div");
+      floorButton.innerHTML = "Floor " + (i + 1);
+      floorsContainer.appendChild(floorButton);
+    }
+  }
+
+  function buildLifts() {
+    var numberOfLifts = numOfLifts.value;
+    var liftsContainer = document.getElementById("lifts-container");
+
+    for (var i = 0; i < numberOfLifts; i++) {
+      var liftButton = document.createElement("div");
+      liftButton.className = "lift";
+      liftButton.innerHTML = "Lift " + (i + 1);
+      liftsContainer.appendChild(liftButton);
+    }
+  }
+</script>
